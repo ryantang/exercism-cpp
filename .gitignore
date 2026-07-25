@@ -1,0 +1,52 @@
+# ---- Build output ----
+build/
+out/
+cmake-build-*/
+
+# ---- CMake generated files ----
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+_deps/
+Testing/
+
+# ---- Compiled objects & binaries ----
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# Exercism test-runner binaries have no extension; ignore them by name in each exercise
+# (uncomment and adjust if you want blanket coverage)
+# */[a-z]*-[a-z]*
+
+# ---- Debug info ----
+*.dSYM/
+*.pdb
+*.idb
+*.ilk
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- Exercism ----
+.exercism/
