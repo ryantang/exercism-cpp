@@ -3,6 +3,10 @@
 ## Context
 This workspace contains **Exercism C++ exercises**. Every subdirectory (e.g., `hello-world/`, `pacman-rules/`, `last-will/`, `log-levels/`) is a coding exercise the user is working through for learning purposes.
 
+## Response style
+
+- **Keep answers concise — aim for half a page or less.** Prefer bullet points and short code snippets over long prose. If a topic genuinely requires more depth, summarize first and offer to expand on request.
+
 ## Rules for the assistant
 
 1. **Do not provide solutions to the exercises.** Do not write or complete the implementation in any `*.cpp` or `*.h` file the user is solving.
