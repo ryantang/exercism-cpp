@@ -1,4 +1,3 @@
-#include <stdexcept>
 // Enter your code below the lines of the families' information
 
 // Secret knowledge of the Zhang family:
