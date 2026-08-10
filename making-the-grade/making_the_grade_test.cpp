@@ -71,6 +71,19 @@ TEST_CASE("Test letter grades: 81", "[task_3]") {
     REQUIRE(expected == actual);
 }
 
+// Non-canonical: exercises the multiply-before-divide integer strategy.
+// passing_band = 59, which is not a multiple of 4, so simple truncation
+// (grade_band = 14) loses the remainder and clusters the top thresholds
+// too low. Multiplying i * passing_band before dividing by 4 distributes
+// the remainder across thresholds.
+TEST_CASE("Test letter grades: 99 (multiply-first)", "[task_3]") {
+    int input{99};
+    array<int, 4> expected{41, 55, 70, 85};
+    array<int, 4> actual = letter_grades(input);
+
+    REQUIRE(expected == actual);
+}
+
 TEST_CASE("Rank one student", "[task_4]") {
     vector<int> grades{82};
     vector<string> names{"Betty"};
