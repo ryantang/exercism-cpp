@@ -1,45 +1,40 @@
 #include "doctor_data.h"
-#include <iostream>
+#include <string>
 
-// ERROR: FILE CORRUPTED. Please supply valid C++ Code.
+heaven::Vessel::Vessel(const std::string& name, int generation)
+    : name{name},
+      generation{generation}
+{}
 
-heaven::Vessel::Vessel(std::string name, int generation) {
-    this->name = name;
-    this->generation = generation;
-    this->busters = 0;
-};
+heaven::Vessel::Vessel(const std::string& name, int generation, star_map::System current_system)
+    : name{name},
+      generation{generation},
+      current_system{current_system}
+{}
 
-heaven::Vessel::Vessel(std::string name, int generation, star_map::System current_system) {
-        this->name = name;
-        this->generation = generation;
-        this->current_system = current_system;
-        this->busters = 0;
-};
-
-heaven::Vessel heaven::Vessel::replicate(std::string name) {
-    return Vessel(name, this->generation + 1, star_map::System::Sol);
+heaven::Vessel heaven::Vessel::replicate(const std::string& name) const {
+    return Vessel(name, this->generation + 1);
 }
 
 void heaven::Vessel::make_buster() {
-    this->busters++;
+    busters++;
 }
 
 bool heaven::Vessel::shoot_buster() {
-    if (this->busters > 0) {
-        this->busters--;
+    if (busters > 0) {
+        busters--;
         return true;
     }
     return false;
 }
 
-std::string heaven::get_older_bob(Vessel probe1, Vessel probe2) {
+std::string heaven::get_older_bob(const Vessel& probe1, const Vessel& probe2) {
     if (probe1.generation <= probe2.generation) {
         return probe1.name;
     }
     return probe2.name;
 }
 
-bool heaven::in_the_same_system(Vessel probe1, Vessel probe2) {
+bool heaven::in_the_same_system(const Vessel& probe1, const Vessel& probe2) {
     return probe1.current_system == probe2.current_system;
 }
-

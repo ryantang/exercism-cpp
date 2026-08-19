@@ -44,4 +44,5 @@ TEST_CASE("Check non-class functions", "[task_4]") {
 }
 
 #if defined(EXERCISM_RUN_ALL_TESTS)
+
 #endif
